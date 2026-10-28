@@ -76,6 +76,17 @@ h2.huge{font-size:150px}
 .legend{display:flex;flex:none;gap:28px;white-space:nowrap;font-family:var(--mono);font-size:16px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);align-items:center}
 .legend span{display:inline-flex;align-items:center}.legend i{display:inline-block;flex:none;width:10px;height:10px;border-radius:50%;background:var(--acc);margin-right:8px}
 .legend i.op{background:#7DB4FF}
+.slide.busy.reprise{padding-top:100px;gap:20px}
+.slide.busy.reprise h2{font-size:60px}
+.wall.solved{position:relative}
+.wall.solved .qb{position:relative;z-index:1;background:var(--panel2)}
+.wall.solved .qb.s,.wall.solved .qb.x{opacity:1;color:#7C8494}.wall.solved .qb.x{color:#5E6573}.wall.solved .qb.s .t,.wall.solved .qb.x .t{color:#5E6573}
+.wall .wires{position:absolute;left:0;top:0;width:100%;height:100%;z-index:0;overflow:visible;pointer-events:none}
+.wall .wires line{stroke:rgba(198,242,78,.38);stroke-width:2;stroke-dasharray:6 7}
+.wall .wires line.op{stroke:rgba(125,180,255,.38)}
+.hub.sher{position:relative;z-index:1;border:2px solid var(--acc);background:radial-gradient(circle at 50% 45%,#2A3714,#12160C 75%);box-shadow:0 0 0 14px rgba(198,242,78,.08),0 0 0 30px rgba(198,242,78,.04),0 0 110px rgba(198,242,78,.28)}
+.hub.sher .hn{font-size:64px;color:var(--acc)}
+.hub.sher .hs b{color:var(--fg)}
 .busyfoot{display:flex;justify-content:space-between;align-items:flex-end;gap:40px}
 /* versus */
 .versus{display:grid;grid-template-columns:1fr 120px 1fr;align-items:stretch}
@@ -373,19 +384,40 @@ body.presenter #pv{display:block}
   </div>
 </section>
 
-<!-- 5 WHO USES IT (light) -->
-<section class="slide" data-section="Story">
+<!-- 5 SAME QUESTIONS, ONE PLACE (reprise of 2) -->
+<section class="slide busy reprise" data-section="Story">
   <div class="tagrow">
     <div class="tag good">Good · design for the whole company</div>
     <div class="tag bad">Bad · assume less prior AI knowledge</div>
   </div>
-  <h2>Who uses it? <span class="muted">Everyone.</span></h2>
-  <div class="grid5 light proof">
-    <div class="card"><div class="ct">Marketing</div><div class="cb">Ads spend + our own signups — not vanity CPC</div></div>
-    <div class="card"><div class="ct">Engineering</div><div class="cb">Bugs → diagnosis → fix → PR</div></div>
-    <div class="card"><div class="ct">Operations</div><div class="cb">Dashboards without waiting on eng</div></div>
-    <div class="card"><div class="ct">Donor team</div><div class="cb">CRM audits in minutes</div></div>
-    <div class="card hot"><div class="ct">Support</div><div class="cb">Real bug? How many users?</div></div>
+  <h2>Same questions. <span class="acc">One place to ask.</span></h2>
+  <div class="wall solved">
+    <svg class="wires" viewBox="0 0 1640 641" aria-hidden="true"><line x1="130" y1="90" x2="820" y2="336"/><line x1="406" y1="102" x2="820" y2="336"/><line class="op" x1="682" y1="80" x2="820" y2="336"/><line x1="958" y1="102" x2="820" y2="336"/><line class="op" x1="1234" y1="90" x2="820" y2="336"/><line class="op" x1="1510" y1="102" x2="820" y2="336"/><line x1="116" y1="270" x2="820" y2="336"/><line class="op" x1="420" y1="270" x2="820" y2="336"/><line x1="1220" y1="270" x2="820" y2="336"/><line class="op" x1="1510" y1="270" x2="820" y2="336"/><line class="op" x1="130" y1="417" x2="820" y2="336"/><line x1="420" y1="417" x2="820" y2="336"/><line x1="1220" y1="417" x2="820" y2="336"/><line class="op" x1="1510" y1="429" x2="820" y2="336"/><line x1="130" y1="555" x2="820" y2="336"/><line class="op" x1="406" y1="565" x2="820" y2="336"/><line x1="682" y1="577" x2="820" y2="336"/><line class="op" x1="958" y1="555" x2="820" y2="336"/><line x1="1234" y1="577" x2="820" y2="336"/><line class="op" x1="1510" y1="565" x2="820" y2="336"/></svg>
+    <div class="qb  l U " style="grid-row:1;grid-column:1"><div class="t">Marketing</div>Can someone run a query for last week’s signups by channel?</div>
+    <div class="qb   U sh2" style="grid-row:1;grid-column:2"><div class="t">Support</div>What does this error in the logs mean?</div>
+    <div class="qb op  U sh1" style="grid-row:1;grid-column:3"><div class="t">Sales</div>Where’s the latest enterprise pricing?</div>
+    <div class="qb  s U sh2" style="grid-row:1;grid-column:4"><div class="t">Product</div>Which table has the feature-flag history?</div>
+    <div class="qb op l U " style="grid-row:1;grid-column:5"><div class="t">Finance</div>Who approves refunds over $500?</div>
+    <div class="qb op x U sh2" style="grid-row:1;grid-column:6"><div class="t">Legal</div>Which vendors process customer data?</div>
+    <div class="qb   L sh3" style="grid-row:2;grid-column:1"><div class="t">Customer Success</div>Did this account’s sync actually fail?</div>
+    <div class="qb op s L sh4" style="grid-row:2;grid-column:2"><div class="t">HR / People</div>Which tool holds the onboarding checklist?</div>
+    <div class="qb  l R sh3" style="grid-row:2;grid-column:5"><div class="t">Leadership</div>Can I get churn by plan before the board call?</div>
+    <div class="qb op s R " style="grid-row:2;grid-column:6"><div class="t">Partnerships</div>Who can set up a partner’s account?</div>
+    <div class="qb op l L " style="grid-row:3;grid-column:1"><div class="t">Support</div>How do we handle a chargeback?</div>
+    <div class="qb  s L sh4" style="grid-row:3;grid-column:2"><div class="t">Data</div>Where is this metric actually computed?</div>
+    <div class="qb   R sh3" style="grid-row:3;grid-column:5"><div class="t">On-call</div>Who changed this config last night?</div>
+    <div class="qb op  R sh2" style="grid-row:3;grid-column:6"><div class="t">Ops</div>Who owns the billing integration?</div>
+    <div class="qb   U sh1" style="grid-row:4;grid-column:1"><div class="t">Finance</div>Why don’t these two revenue numbers match?</div>
+    <div class="qb op x U " style="grid-row:4;grid-column:2"><div class="t">Product</div>How does the cancellation flow work today?</div>
+    <div class="qb  s U sh2" style="grid-row:4;grid-column:3"><div class="t">Sales</div>Does the API support this for a prospect?</div>
+    <div class="qb op  U sh1" style="grid-row:4;grid-column:4"><div class="t">Marketing</div>Which list did this campaign go to?</div>
+    <div class="qb  x U sh2" style="grid-row:4;grid-column:5"><div class="t">Compliance</div>Do we keep audit logs for exports?</div>
+    <div class="qb op l U " style="grid-row:4;grid-column:6"><div class="t">Ops</div>Where is the runbook for a vendor outage?</div>
+    <div class="hub sher"><div class="hk">Every question now goes to</div><div class="hn">Sherlog</div><div class="hs"><b>one place to ask, for everyone</b><br>technical or operational</div></div>
+  </div>
+  <div class="busyfoot">
+    <p class="lead">Every team asks Sherlog directly, in plain words. <strong>The few who know get their day back.</strong></p>
+    <div class="legend"><span><i></i>Technical</span><span><i class="op"></i>Operational</span></div>
   </div>
 </section>
 
