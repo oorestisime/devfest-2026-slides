@@ -189,6 +189,20 @@ h2.huge{font-size:150px}
 .grid5.light .card{min-height:200px}
 .grid5.light .ct{font-size:36px}
 .grid5.light .cb{font-size:28px}
+/* takeaways intro (agenda) */
+.agenda{display:flex;flex-direction:column;gap:22px}
+.arow{display:grid;grid-template-columns:110px 520px 1fr;align-items:center;gap:24px;background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:30px 40px}
+.arow .an{font-size:30px;color:var(--acc);letter-spacing:.1em}
+.arow .at{font-size:46px;font-weight:650;letter-spacing:-.02em}
+.arow .ag{font-size:32px;color:var(--mut);line-height:1.3}
+.slide.tagged{padding-top:110px;gap:28px}.slide.demo.tagged{padding-top:100px;gap:22px}.slide.demo.tagged .pipe{margin-top:-6px}
+.agenda.check{gap:18px}.agenda.check .arow{grid-template-columns:90px 230px 1fr;padding:26px 40px}
+.arow.skip{border-color:rgba(255,140,120,.35);background:rgba(255,100,80,.05)}.arow.skip .an,.arow.skip .at{color:#FFB4A2}
+/* bad / ugly lesson slides */
+h2 .bad{color:#FFB4A2}h2 .ugly{color:#E8D48B}
+.take3.bad .tcard{border-color:rgba(255,140,120,.3)}.take3.bad .tn{color:#FFB4A2}
+.take3.ugly .tcard{border-color:rgba(232,212,139,.3)}.take3.ugly .tn{color:#E8D48B}
+.take3.ugly .tcard{min-height:260px}
 /* takeaways */
 .take3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
 .tcard{background:var(--panel);border:1px solid var(--line);border-radius:28px;padding:40px 36px;min-height:340px;display:flex;flex-direction:column;gap:18px}
@@ -437,9 +451,19 @@ body.presenter #pv{display:block}
   </div>
 </section>
 
-<!-- 7 CONTEXT -->
+<!-- 7 THREE TAKEAWAYS (intro to the how) -->
 <section class="slide" data-section="How">
-  <div class="tag good">Good · connect the tools you already use</div>
+  <h2>Three takeaways on<br><span class="acc">making it successful</span></h2>
+  <div class="agenda">
+    <div class="arow"><div class="an mono">01</div><div class="at">Give it context</div><div class="ag">An agent is only as good as what it can see.</div></div>
+    <div class="arow"><div class="an mono">02</div><div class="at">Earn trust</div><div class="ag">Read-only first, then open writes gradually.</div></div>
+    <div class="arow"><div class="an mono">03</div><div class="at">Let it grow</div><div class="ag">Automations, then it starts improving itself.</div></div>
+  </div>
+</section>
+
+<!-- 8 CONTEXT -->
+<section class="slide" data-section="Context">
+  <div class="tag good">01 · Context</div>
   <h2>Context is the product</h2>
   <div class="ctx">
     <div class="ctxrow"><div class="ctxl">Engineering</div>
@@ -449,11 +473,12 @@ body.presenter #pv{display:block}
     <div class="ctxrow"><div class="ctxl">Business &amp; people</div>
       <div class="tiles"><div class="tile">HubSpot</div><div class="tile">Intercom</div><div class="tile">QuickBooks</div><div class="tile">Google Workspace</div><div class="tile">Slack</div></div></div>
   </div>
+  <p class="quote-inline"><span class="acc">An agent is only as good as what it can see.</span> Connect the tools you already use.</p>
 </section>
 
-<!-- 8 ENTRY POINTS -->
-<section class="slide" data-section="How">
-  <div class="tag bad">Bad · design safe local access earlier</div>
+<!-- 9 ENTRY POINTS -->
+<section class="slide" data-section="Context">
+  <div class="tag good">01 · Context</div>
   <h2><span class="acc">3.5</span> entry points</h2>
   <div class="entries">
     <div class="card"><div class="ct mono">Slack</div><div class="cb"><span class="mono acc">@sherlog</span> where people already talk</div></div>
@@ -461,12 +486,12 @@ body.presenter #pv{display:block}
     <div class="card"><div class="ct mono">Web</div><div class="cb">Authenticated app: sessions, search, chat</div></div>
     <div class="card half"><div class="ct mono">+0.5</div><div class="cb"><span class="mono">sherlog</span> CLI — BYOK agent interface + safe gateway to the same capabilities</div></div>
   </div>
-  <div class="band"><div class="bandl"><strong>One session, any surface.</strong> The CLI is powerful — I should have designed safe local access earlier so people's own harnesses could use company tools without seeing credentials.</div></div>
+  <div class="band"><div class="bandl"><strong>One session, any surface.</strong> Everyone now has their own coding agent or assistant. The CLI makes the capabilities portable, so they reach people wherever they work.</div></div>
 </section>
 
-<!-- 9 ARCHITECTURE + CAPABILITIES (UGLY) -->
-<section class="slide archslide" data-section="How">
-  <div class="tag ugly">Ugly · I chased architecture too long</div>
+<!-- 10 ARCHITECTURE + CAPABILITIES -->
+<section class="slide archslide" data-section="Context">
+  <div class="tag good">01 · Context</div>
   <h2>Architecture: <span class="muted">deliberately boring</span></h2>
   <div class="arch">
     <div class="abox"><div class="an">Box 1</div><div class="al">Server</div></div>
@@ -492,12 +517,12 @@ body.presenter #pv{display:block}
     <div class="ck">Inference</div>
     <div class="cx">The company’s <strong>OpenAI</strong> subscription, plus <strong>OpenCode Go</strong> for open-source models and lighter tasks.</div>
   </div>
-  <p class="quote-inline">Ugly truth: I lost time chasing better boxes. <span class="acc">“Adoption does not happen because the architecture is impressive.</span> It happens when somebody sees the agent solve a problem they recognize.”</p>
+  <p class="quote-inline"><span class="acc">“Adoption does not happen because the architecture is impressive.</span> It happens when somebody sees the agent solve a problem they recognize.”</p>
 </section>
 
-<!-- 10 READ-ONLY → WRITES -->
-<section class="slide" data-section="How">
-  <div class="tag good">Good · read-only first</div>
+<!-- 11 READ-ONLY → WRITES -->
+<section class="slide" data-section="Trust">
+  <div class="tag good">02 · Trust</div>
   <h2>Started read-only.<br><span class="acc">Then we opened writes.</span></h2>
   <div class="timeline">
     <div class="tnode">
@@ -518,8 +543,9 @@ body.presenter #pv{display:block}
   </div>
 </section>
 
-<!-- 11 DEMO / REAL BUG -->
-<section class="slide demo" data-section="How">
+<!-- 12 DEMO / REAL BUG -->
+<section class="slide demo tagged" data-section="Trust">
+  <div class="tag good">02 · Trust</div>
   <div class="demohead"><h2>A real bug</h2><div class="timer"><span class="acc">~6</span> min · diagnose</div></div>
   <div class="pipe"><span>Support report</span><i>→</i><span>Stale cache, silent success</span><i>→</i><span class="acc">Fix + PR</span></div>
   <div class="demobody shot">
@@ -537,8 +563,9 @@ body.presenter #pv{display:block}
   </div>
 </section>
 
-<!-- 12 AUTOMATIONS -->
-<section class="slide" data-section="How">
+<!-- 13 AUTOMATIONS -->
+<section class="slide tagged" data-section="Growth">
+  <div class="tag good">03 · Growth</div>
   <h2>Automations</h2>
   <div class="autobody">
     <div class="autoleft">
@@ -554,12 +581,9 @@ body.presenter #pv{display:block}
   </div>
 </section>
 
-<!-- 13 SELF-IMPROVES -->
-<section class="slide" data-section="How">
-  <div class="tagrow">
-    <div class="tag bad">Bad · contribution paths weren't obvious</div>
-    <div class="tag good">Good · close the feedback loop</div>
-  </div>
+<!-- 14 SELF-IMPROVES -->
+<section class="slide" data-section="Growth">
+  <div class="tag good">03 · Growth</div>
   <h2>It improves <span class="acc">itself</span></h2>
   <div class="loop">
     <div class="lnode"><div class="lnn mono acc">01</div>Edits its own <strong>automations</strong></div>
@@ -572,17 +596,41 @@ body.presenter #pv{display:block}
   </div>
 </section>
 
-<!-- 14 HOW TO START YOURS -->
-<section class="slide" data-section="Start">
-  <h2>How to start <span class="acc">yours</span></h2>
-  <div class="take3">
-    <div class="tcard"><div class="tn">01</div><b>Go where people talk</b><span>Put it in Slack, in shared channels. Make usage public: every answer is a demo someone recognizes.</span></div>
-    <div class="tcard"><div class="tn">02</div><b>Plug in real context</b><span>Read-only first. Connect the tools you already use with small, boring wrappers. Don't chase architecture.</span></div>
-    <div class="tcard"><div class="tn">03</div><b>Open writes carefully</b><span>One capabilities layer for every surface. Permissions live there. Credentials never in the model.</span></div>
+<!-- 15 THE BAD -->
+<section class="slide" data-section="Lessons">
+  <div class="tag bad">The bad</div>
+  <h2>What didn’t <span class="bad">work</span></h2>
+  <div class="take3 bad">
+    <div class="tcard"><div class="tn">01</div><b>Don’t chase the perfect architecture</b><span>I lost time chasing better boxes. Adoption came from people seeing it solve a problem they recognize.</span></div>
+    <div class="tcard"><div class="tn">02</div><b>Don’t expect contributions</b><span>I got almost none, mostly because people don’t know how to contribute to something like this.</span></div>
+    <div class="tcard"><div class="tn">03</div><b>Design safe local access earlier</b><span>People’s own agents should use company tools without ever seeing credentials. I got there late.</span></div>
   </div>
 </section>
 
-<!-- 15 THANKS -->
+<!-- 16 THE UGLY -->
+<section class="slide" data-section="Lessons">
+  <div class="tag ugly">The ugly</div>
+  <h2>Where I <span class="ugly">lost time</span></h2>
+  <div class="take3 ugly">
+    <div class="tcard"><div class="tn">01</div><b>Evals on every new model</b><span>A new round every time a model came out.</span></div>
+    <div class="tcard"><div class="tn">02</div><b>Agonising over the default model</b><span>Which one should everyone get by default?</span></div>
+    <div class="tcard"><div class="tn">03</div><b>Tracing, built like a product</b><span>It’s an internal tool, not a product.</span></div>
+  </div>
+  <div class="band"><div class="bandl">None of it ended up mattering much. <strong>A frontier model is enough.</strong></div></div>
+</section>
+
+<!-- 17 HOW TO START YOURS -->
+<section class="slide" data-section="Start">
+  <h2>How to start <span class="acc">yours</span></h2>
+  <div class="agenda check">
+    <div class="arow"><div class="an mono">01</div><div class="at">Context</div><div class="ag">Connect the tools you already use. Put it where people already work.</div></div>
+    <div class="arow"><div class="an mono">02</div><div class="at">Trust</div><div class="ag">Start read-only. Open writes gradually, behind one permissions layer.</div></div>
+    <div class="arow"><div class="an mono">03</div><div class="at">Growth</div><div class="ag">Add automations once people trust it. Let it improve itself.</div></div>
+    <div class="arow skip"><div class="an mono">✕</div><div class="at">Skip</div><div class="ag">Perfect architecture, per-model evals, tracing. Pick a frontier model.</div></div>
+  </div>
+</section>
+
+<!-- 18 THANKS -->
 <section class="slide title end" data-section="">
   <h1>Thanks. <span class="acc">Questions?</span></h1>
   <div class="contact">
