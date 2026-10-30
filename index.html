@@ -76,7 +76,7 @@ h2.huge{font-size:150px}
 .legend{display:flex;flex:none;gap:28px;white-space:nowrap;font-family:var(--mono);font-size:16px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);align-items:center}
 .legend span{display:inline-flex;align-items:center}.legend i{display:inline-block;flex:none;width:10px;height:10px;border-radius:50%;background:var(--acc);margin-right:8px}
 .legend i.op{background:#7DB4FF}
-.slide.busy.reprise{padding-top:100px;gap:20px}
+.slide.busy.reprise{padding-top:120px;gap:20px}
 .slide.busy.reprise h2{font-size:60px}
 .wall.solved{position:relative}
 .wall.solved .qb{position:relative;z-index:1;background:var(--panel2)}
@@ -209,6 +209,10 @@ h2 .bad{color:#FFB4A2}h2 .ugly{color:#E8D48B}
 .tcard .tn{font-family:var(--mono);font-size:26px;color:var(--acc);letter-spacing:.1em}
 .tcard b{font-size:42px;line-height:1.15;font-weight:650;letter-spacing:-.02em}
 .tcard span{font-size:30px;color:var(--mut);line-height:1.35}
+.take3.take4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.take3.take4 .tcard{padding:32px;gap:16px}
+.take3.take4 .tcard b{font-size:36px}
+.take3.take4 .tcard span{font-size:28px}
 /* grid5 */
 .grid5{display:grid;grid-template-columns:repeat(6,1fr);gap:28px}
 .grid5 .card{grid-column:span 2;min-height:260px}
@@ -400,10 +404,6 @@ body.presenter #pv{display:block}
 
 <!-- 5 SAME QUESTIONS, ONE PLACE (reprise of 2) -->
 <section class="slide busy reprise" data-section="Story">
-  <div class="tagrow">
-    <div class="tag good">Good · design for the whole company</div>
-    <div class="tag bad">Bad · assume less prior AI knowledge</div>
-  </div>
   <h2>Same questions. <span class="acc">One place to ask.</span></h2>
   <div class="wall solved">
     <svg class="wires" viewBox="0 0 1640 641" aria-hidden="true"><line x1="130" y1="90" x2="820" y2="336"/><line x1="406" y1="102" x2="820" y2="336"/><line class="op" x1="682" y1="80" x2="820" y2="336"/><line x1="958" y1="102" x2="820" y2="336"/><line class="op" x1="1234" y1="90" x2="820" y2="336"/><line class="op" x1="1510" y1="102" x2="820" y2="336"/><line x1="116" y1="270" x2="820" y2="336"/><line class="op" x1="420" y1="270" x2="820" y2="336"/><line x1="1220" y1="270" x2="820" y2="336"/><line class="op" x1="1510" y1="270" x2="820" y2="336"/><line class="op" x1="130" y1="417" x2="820" y2="336"/><line x1="420" y1="417" x2="820" y2="336"/><line x1="1220" y1="417" x2="820" y2="336"/><line class="op" x1="1510" y1="429" x2="820" y2="336"/><line x1="130" y1="555" x2="820" y2="336"/><line class="op" x1="406" y1="565" x2="820" y2="336"/><line x1="682" y1="577" x2="820" y2="336"/><line class="op" x1="958" y1="555" x2="820" y2="336"/><line x1="1234" y1="577" x2="820" y2="336"/><line class="op" x1="1510" y1="565" x2="820" y2="336"/></svg>
@@ -437,7 +437,6 @@ body.presenter #pv{display:block}
 
 <!-- 6 CROSSOVER -->
 <section class="slide" data-section="Story">
-  <div class="tag good">Good · make usage visible early</div>
   <h2>The crossover</h2>
   <div class="flow">
     <div class="step"><div class="sn">01</div><div class="st">Support investigates <strong>missing referral rewards</strong> with <span class="mono acc">@sherlog</span></div></div>
@@ -600,10 +599,11 @@ body.presenter #pv{display:block}
 <section class="slide" data-section="Lessons">
   <div class="tag bad">The bad</div>
   <h2>What didn’t <span class="bad">work</span></h2>
-  <div class="take3 bad">
+  <div class="take3 take4 bad">
     <div class="tcard"><div class="tn">01</div><b>Don’t chase the perfect architecture</b><span>I lost time chasing better boxes. Adoption came from people seeing it solve a problem they recognize.</span></div>
-    <div class="tcard"><div class="tn">02</div><b>Don’t expect contributions</b><span>I got almost none, mostly because people don’t know how to contribute to something like this.</span></div>
+    <div class="tcard"><div class="tn">02</div><b>Don’t count on contributions</b><span>I got almost none, mostly because people don’t know how to contribute to something like this.</span></div>
     <div class="tcard"><div class="tn">03</div><b>Design safe local access earlier</b><span>People’s own agents should use company tools without ever seeing credentials. I got there late.</span></div>
+    <div class="tcard"><div class="tn">04</div><b>Assume less prior AI knowledge</b><span>Most people here had never used an agent. Design for someone who doesn’t know what to ask, or how.</span></div>
   </div>
 </section>
 
